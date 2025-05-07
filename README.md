@@ -17,49 +17,37 @@ A proposta foi desenvolvida como um MVP funcional, com base em dados simulados, 
 ## 🗺️ Diagrama da Solução
 
 ```text
-                                +-------------------------------+
-                                | Entrada de Dados Internos     |
-                                | (Clientes: CRM / CSV / API)   |
-                                +---------------+---------------+
-                                                |
-                                                v
-                                +-------------------------------+
-                                | Pré-processamento             |
-                                | (Python + Pandas)             |
-                                +---------------+---------------+
-                                                |
-                                                v
-     +-------------------------+      +-------------------------+     
-     | Entrada de Dados        |      | Entrada de Dados        |
-     | Externos / Potenciais   |      | Comportamento Online    |
-     | (Web, Leads, Redes Soc.)|      | (Cookies, Interesse etc)|
-     +-------------+-----------+      +-------------+-----------+
-                   \                           /
-                    \                         /
-                     \_______________________/
-                              |
-                              v
-              +-------------------------------+
-              | Análise e Segmentação por IA   |
-              | (IBM WatsonX.ai)              |
-              +---------+---------+-----------+
-                        |                     |
-                        v                     v
-      +-------------------------+   +---------------------------+
-      | Produtos / Serviços     |   | Produtos / Serviços       |
-      | para Clientes Atuais    |   | para Potenciais Clientes  |
-      +-------------------------+   +---------------------------+
-                        |                     |
-                        v                     v
-+--------------------------+     +--------------------------------------+
-| Campanhas Personalizadas |     | Estratégias de Captação por Mídias  |
-| (E-mail, App, SMS)       |     | (Social Ads, Postagens, WhatsApp)   |
-+------------+-------------+     +---------------------+----------------+
-             |                                         |
-             v                                         v
-+-------------------------------+         +-----------------------------+
-| Interface Flutter (Cliente)  |         | Páginas de Conversão /      |
-| Recomendações Personalizadas |         | Landing Pages para Novos    |
-+-------------------------------+         | Leads ou Vendas Diretas     |
-                                          +-----------------------------+
-
+```text
+                +-------------------------------+       +-------------------------------+
+                | Entrada de Dados Externos     |       | Entrada de Dados Internos     |
+                | (Leads, Web, Social, Cookies) |       | (Clientes: CRM / CSV / API)   |
+                +---------------+---------------+       +---------------+---------------+
+                                \                               /
+                                 \                             /
+                                  \___________________________/
+                                              |
+                                              v
+                        +---------------------------------------------+
+                        | Pré-processamento                          |
+                        | (Python + Pandas / Limpeza e Unificação)   |
+                        +----------------------------+---------------+
+                                                         |
+                                                         v
+                              +-------------------------------------+
+                              | Análise e Segmentação por IA        |
+                              | (IBM WatsonX.ai)                    |
+                              +------------------+------------------+
+                                                 |
+                        +------------------------+------------------------+
+                        |                                                 |
+                        v                                                 v
+         +-----------------------------+                 +------------------------------+
+         | Produtos / Serviços          |                 | Produtos / Serviços           |
+         | para Clientes Atuais (B2C)   |                 | para Potenciais Clientes (B2C)|
+         +---------------+-------------+                 +---------------+--------------+
+                         |                                                 |
+                         v                                                 v
+     +-------------------------------------+         +----------------------------------------+
+     | Campanhas Personalizadas            |         | Estratégias de Captação por Mídias     |
+     | (E-mail, App, SMS, Push, etc.)      |         | (Social Ads, Postagens, WhatsApp, etc.)|
+     +-------------------------------------+         +----------------------------------------+
