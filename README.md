@@ -17,37 +17,49 @@ A proposta foi desenvolvida como um MVP funcional, com base em dados simulados, 
 ## 🗺️ Diagrama da Solução
 
 ```text
-+-------------------------------+
-| Entrada de Dados             |
-| (CSV / API / CRM)            |
-+---------------+--------------+
-                |
-                v
-+-------------------------------+
-| Pré-processamento             |
-| (Python + Pandas)            |
-+---------------+--------------+
-                |
-                v
-+-------------------------------+
-| Análise Inteligente com IA    |
-| (IBM WatsonX.ai)              |
-+---------------+--------------+
-                |
-                v
-+-------------------------------+
-| Geração de Conteúdo com IA    |
-| (Gemini / WatsonX.ai)         |
-+---------------+--------------+
-                |
-                v
-+-------------------------------+
-| Campanhas Automatizadas       |
-| (Python + Lógica de Negócio) |
-+---------------+--------------+
-                |
-                v
-+-------------------------------+
-| Exibição ao Cliente           |
-| (Flutter - Interface Mobile)  |
-+-------------------------------+
+                                +-------------------------------+
+                                | Entrada de Dados Internos     |
+                                | (Clientes: CRM / CSV / API)   |
+                                +---------------+---------------+
+                                                |
+                                                v
+                                +-------------------------------+
+                                | Pré-processamento             |
+                                | (Python + Pandas)             |
+                                +---------------+---------------+
+                                                |
+                                                v
+     +-------------------------+      +-------------------------+     
+     | Entrada de Dados        |      | Entrada de Dados        |
+     | Externos / Potenciais   |      | Comportamento Online    |
+     | (Web, Leads, Redes Soc.)|      | (Cookies, Interesse etc)|
+     +-------------+-----------+      +-------------+-----------+
+                   \                           /
+                    \                         /
+                     \_______________________/
+                              |
+                              v
+              +-------------------------------+
+              | Análise e Segmentação por IA   |
+              | (IBM WatsonX.ai)              |
+              +---------+---------+-----------+
+                        |                     |
+                        v                     v
+      +-------------------------+   +---------------------------+
+      | Produtos / Serviços     |   | Produtos / Serviços       |
+      | para Clientes Atuais    |   | para Potenciais Clientes  |
+      +-------------------------+   +---------------------------+
+                        |                     |
+                        v                     v
++--------------------------+     +--------------------------------------+
+| Campanhas Personalizadas |     | Estratégias de Captação por Mídias  |
+| (E-mail, App, SMS)       |     | (Social Ads, Postagens, WhatsApp)   |
++------------+-------------+     +---------------------+----------------+
+             |                                         |
+             v                                         v
++-------------------------------+         +-----------------------------+
+| Interface Flutter (Cliente)  |         | Páginas de Conversão /      |
+| Recomendações Personalizadas |         | Landing Pages para Novos    |
++-------------------------------+         | Leads ou Vendas Diretas     |
+                                          +-----------------------------+
+
